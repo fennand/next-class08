@@ -4,7 +4,10 @@ import { getProjects } from "../lib/projects";
 export default function Page() {
   const projects = getProjects();
   return (
-    <main className="flex min-h-screen items-center justify-center p-24 bg-black text-white">
+    <main
+      className="flex min-h-screen items-center justify-center p-24 bg-black text-white"
+      style={{ backgroundColor: "#002121" }}
+    >
       <div className="flex flex-col items-center justify-center w-2/3 bg-white p-8 rounded-lg">
         <h1 className="text-3xl font-bold mb-4 text-black">Projects</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -13,7 +16,7 @@ export default function Page() {
               <Link href={`/projects/${project.slug}`}>
                 <div style={{ cursor: "pointer" }}>
                   <img
-                    src={project.image}
+                    src={project.card_image}
                     alt={project.title}
                     className="w-full h-48 object-cover mb-4 rounded-md"
                   />
