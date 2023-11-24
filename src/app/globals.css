@@ -25,3 +25,33 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.wrapper.maintext {
+  background-color: #020015;
+  font-size: 5rem;
+  font-family: "Play", sans-serif;
+}
+.maintext .type {
+  padding: 2rem 1rem;
+  width: auto;
+  margin: auto;
+}
+.maintext h3 {
+  width: 21ch;
+  border-right: 4px solid white;
+  margin: 2rem auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(13, end),
+    blink-caret 0.5s step-end infinite alternate;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}

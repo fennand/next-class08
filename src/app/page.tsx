@@ -3,14 +3,22 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-black text-white">
-      <div className="flex flex-col items-center justify-center w-2/3 bg-white p-8 rounded-lg">
+    <main
+      className="flex min-h-screen flex-col items-center justify-center p-24 bg-black text-white relative"
+      style={{ backgroundColor: "#020015" }}
+    >
+      <div className="wrapper maintext">
+        <div className="type">
+          <h3 className="typing">Andrew Fennell's Portfolio</h3>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center w-2/3 bg-white p-8 pt-36 rounded-lg relative z-10">
         <Image
           src="/profile-pic.png"
           alt="Profile Picture"
           width={200}
           height={200}
-          className="rounded-full mb-4"
+          className="rounded-full mb-4 absolute -top-1/4"
         />
         <p className="text-center text-black">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
