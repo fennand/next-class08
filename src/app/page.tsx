@@ -9,7 +9,7 @@ const Home = () => {
     >
       <div className="wrapper maintext">
         <div className="type">
-          <h3 className="typing">Andrew Fennell's Portfolio</h3>
+          <h3 className="typing">Andrew Fennell&apos;s Portfolio</h3>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center w-2/3 bg-white p-8 pt-36 rounded-lg relative z-10">
