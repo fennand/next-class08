@@ -4,12 +4,9 @@ import { getProjects } from "../lib/projects";
 export default function Page() {
   const projects = getProjects();
   return (
-    <main
-      className="flex min-h-screen items-center justify-center p-24 bg-black text-white"
-      style={{ backgroundColor: "#002121" }}
-    >
-      <div className="flex flex-col items-center justify-center w-2/3 bg-white p-8 rounded-lg">
-        <h1 className="text-3xl font-bold mb-4 text-black">Projects</h1>
+    <main className="flex min-h-screen items-center justify-center p-24">
+      <div className="flex flex-col items-center w-2/3 bg-white p-8 rounded-lg">
+        <h1 className="text-3xl font-bold mb-4 text-dark-green">Projects</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {projects.map((project) => (
             <div key={project.slug} className="p-4 border rounded-md">
@@ -20,7 +17,7 @@ export default function Page() {
                     alt={project.title}
                     className="w-full h-48 object-cover mb-4 rounded-md"
                   />
-                  <h2 className="text-xl font-bold text-black">
+                  <h2 className="text-xl font-bold text-dark-green">
                     {project.title}
                   </h2>
                   <p className="text-gray-600">{project.tagline}</p>
@@ -31,7 +28,7 @@ export default function Page() {
         </div>
         <div className="mt-8">
           <Link href="/">
-            <div className="bg-black text-white px-4 py-2 rounded-md cursor-pointer">
+            <div className="bg-dark-green text-white text-xl px-4 py-2 rounded-md cursor-pointer">
               Go Home
             </div>
           </Link>

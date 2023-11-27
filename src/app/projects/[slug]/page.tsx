@@ -22,22 +22,24 @@ export default function Page({ params }: projectProjectParams) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-black text-white">
-      <div className="w-full bg-black">
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-white">
+      <div className="w-full">
         <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg mb-8 max-w-5xl w-full">
-            <h1 className="text-3xl font-bold mb-4 text-black">
+          <div className="bg-white p-8 rounded-lg my-8 max-w-5xl w-full mt-48">
+            <h1 className="text-3xl font-bold mb-4 text-dark-green">
               {project.title}
             </h1>
-            <p className="text-lg mb-4 text-black">{project.tagline}</p>
+            <p className="text-lg mb-4 text-dark-green">{project.tagline}</p>
             <img
               src={project.main_image}
               alt={project.title}
               className="w-full h-100 object-cover mb-4 rounded-md"
             />
-            <p className="text-lg mb-4 text-black">{project.description}</p>
+            <p className="text-lg mb-4 text-dark-green">
+              {project.description}
+            </p>
             {project.site_URL && (
-              <p className="text-lg mb-4 text-black">
+              <p className="text-lg mb-4 text-dark-green">
                 Site:{" "}
                 <ExternalLink href={project.site_URL}>
                   {project.site_URL}
@@ -45,19 +47,21 @@ export default function Page({ params }: projectProjectParams) {
               </p>
             )}
             {project.repo_URL && (
-              <p className="text-lg mb-4 text-black">
+              <p className="text-lg mb-4 text-dark-green">
                 Repo:{" "}
                 <ExternalLink href={project.repo_URL}>
                   {project.repo_URL}
                 </ExternalLink>
               </p>
             )}
-            <p className="text-lg text-black">Category: {project.category}</p>
+            <p className="text-lg text-dark-green">
+              Category: {project.category}
+            </p>
           </div>
         </div>
-        <div className="flex items-center justify-center mt-8">
+        <div className="flex items-center justify-center my-8">
           <Link href="/projects">
-            <div className="bg-white text-black px-4 py-2 rounded-md cursor-pointer">
+            <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer">
               Go Back to Projects
             </div>
           </Link>
