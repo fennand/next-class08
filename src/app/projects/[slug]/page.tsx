@@ -35,7 +35,7 @@ export default function Page({ params }: projectProjectParams) {
               alt={project.title}
               className="w-full h-100 object-cover mb-4 rounded-md"
             />
-            <p className="text-lg mb-4 text-dark-green">
+            <p className="text-lg mb-4 text-dark-green whitespace-pre-line">
               {project.description}
             </p>
             {project.site_URL && (
