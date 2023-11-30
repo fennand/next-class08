@@ -3,10 +3,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-24 text-white relative"
-      /* style={{ backgroundColor: "#020015" }} */
-    >
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-white relative">
       <div className="wrapper maintext mb-8">
         <div className="type">
           <h1 className="typing">Andrew Fennell&apos;s Portfolio</h1>

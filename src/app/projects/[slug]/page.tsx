@@ -16,16 +16,41 @@ export function generateStaticParams() {
 }
 
 export default function Page({ params }: projectProjectParams) {
-  const project = getProjectsBySlug(params.slug);
-  if (!project) {
+  const projects = getProjects();
+  const currentIndex = projects.findIndex(
+    (project) => project.slug === params.slug
+  );
+
+  if (currentIndex === -1) {
     notFound();
   }
 
+  const project = projects[currentIndex];
+  const previousProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject =
+    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+
+  const renderPreviousButton = previousProject && (
+    <Link href={`/projects/${previousProject.slug}`}>
+      <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer mr-4">
+        Previous Project
+      </div>
+    </Link>
+  );
+
+  const renderNextButton = nextProject && (
+    <Link href={`/projects/${nextProject.slug}`}>
+      <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer">
+        Next Project
+      </div>
+    </Link>
+  );
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-white">
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <div className="w-full">
         <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg my-8 max-w-5xl w-full mt-48">
+          <div className="bg-white p-8 rounded-lg my-8 max-w-7xl w-full">
             <h1 className="text-3xl font-bold mb-4 text-dark-green">
               {project.title}
             </h1>
@@ -60,11 +85,14 @@ export default function Page({ params }: projectProjectParams) {
           </div>
         </div>
         <div className="flex items-center justify-center my-8">
+          {renderPreviousButton}
           <Link href="/projects">
             <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer">
               Go Back to Projects
             </div>
           </Link>
+          {renderNextButton && <div className="ml-4"></div>}
+          {renderNextButton}
         </div>
       </div>
     </main>
