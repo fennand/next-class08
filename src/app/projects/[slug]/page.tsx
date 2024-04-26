@@ -47,17 +47,10 @@ export default function Page({ params }: projectProjectParams) {
   );
 
   return (
-<<<<<<< HEAD
     <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 text-white">
       <div className="w-full md:w-2/3 lg:w-2/3">
         <div className="flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg my-8 w-full mt-48">
-=======
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="w-full">
-        <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg my-8 max-w-7xl w-full">
->>>>>>> c97e0993f4d7be261e694ef2253b735012959b6d
             <h1 className="text-3xl font-bold mb-4 text-dark-green">
               {project.title}
             </h1>

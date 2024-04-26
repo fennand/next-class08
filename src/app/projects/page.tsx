@@ -4,21 +4,10 @@ import { getProjects } from "../lib/projects";
 export default function Page() {
   const projects = getProjects();
   return (
-<<<<<<< HEAD
     <main className="flex min-h-screen items-center justify-center p-4 md:p-24">
       <div className="flex flex-col items-center w-full md:w-2/3 lg:w-2/3 bg-white p-8 rounded-lg">
         <h1 className="text-3xl font-bold mb-4 text-dark-green">Projects</h1>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-=======
-    <main className="flex min-h-screen items-center justify-center p-24">
-      <div className="flex flex-col items-center w-3/4 bg-white p-8 rounded-lg">
-        <div className="wrapper project-text mb-8">
-          <div className="type">
-            <h1 className="typing">Projects</h1>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
->>>>>>> c97e0993f4d7be261e694ef2253b735012959b6d
           {projects.map((project) => (
             <div key={project.slug} className="p-4 border rounded-md">
               <Link href={`/projects/${project.slug}`}>
