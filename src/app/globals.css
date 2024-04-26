@@ -73,13 +73,8 @@ body {
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 768px) {
   .wrapper.maintext {
     font-size: 3rem; /* Adjust the font size for mobile */
   }
-=======
-.project-page-container {
-  margin-top: 3rem; /* Adjust this value to control the gap */
->>>>>>> c97e0993f4d7be261e694ef2253b735012959b6d
 }
