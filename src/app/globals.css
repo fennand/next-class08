@@ -24,13 +24,15 @@ body {
 
 .wrapper.maintext {
   background-color: transparent;
-  font-size: 5rem;
+  font-size: 5rem; /* Default font size for larger screens */
 }
+
 .maintext .type {
   padding: 2rem 1rem;
   width: auto;
   margin: auto;
 }
+
 .maintext h1 {
   color: #002121;
   width: 20ch;
@@ -44,13 +46,15 @@ body {
 
 .wrapper.project-text {
   background-color: transparent;
-  font-size: 2rem;
+  font-size: 2rem; /* Default font size for larger screens */
   font-weight: bold;
 }
+
 .project-text .type {
   width: auto;
   margin: auto;
 }
+
 .project-text h1 {
   color: #002121;
   width: 6ch;
@@ -62,19 +66,13 @@ body {
     blink-caret 0.5s step-end infinite alternate;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
 @media (max-width: 768px) {
   .wrapper.maintext {
-    font-size: 3rem; /* Adjust the font size for mobile */
+    font-size: 2rem; /* Adjust the font size for mobile */
+  }
+
+  .maintext h1 {
+    width: auto; /* Allow the text to wrap */
+    margin-top: 5rem;
   }
 }
