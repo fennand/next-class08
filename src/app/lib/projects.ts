@@ -9,7 +9,7 @@ const PROJECTS = [
     title: "Math Dragons!",
     slug: "math-dragons",
     description:
-      "Objective \n\n" +
+      "Objective test \n\n" +
       "As part of my 12 week MERN coding bootcamp, we were tasked with creating apps for our mid-course group project. My team decided to make a Choose Your Own Adventure text game, the story being a fight a dragon/save a maiden trope, but with the added twist of having to solve maths questions to advance.\n\n" +
       "Objective \n\n" +
       "The criteria for our project was that the app had at least three pages (one of which being an 'About Us' page), and that there were CSS animations on the app. The app also had to accept some sort of user input, and with using local storage this input persists from one page to at least one other.\n\n" +
