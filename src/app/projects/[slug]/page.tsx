@@ -22,10 +22,10 @@ export default function Page({ params }: projectProjectParams) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-white">
-      <div className="w-full">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 text-white">
+      <div className="w-full md:w-2/3 lg:w-2/3">
         <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg my-8 max-w-5xl w-full mt-48">
+          <div className="bg-white p-8 rounded-lg my-8 w-full mt-48">
             <h1 className="text-3xl font-bold mb-4 text-dark-green">
               {project.title}
             </h1>

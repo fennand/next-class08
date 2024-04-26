@@ -91,3 +91,9 @@ body {
     border-color: transparent;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper.maintext {
+    font-size: 3rem; /* Adjust the font size for mobile */
+  }
+}

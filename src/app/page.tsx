@@ -7,7 +7,7 @@ const Home = () => {
       className="flex min-h-screen flex-col items-center justify-center p-24 text-white relative"
       /* style={{ backgroundColor: "#020015" }} */
     >
-      <div className="wrapper maintext mb-8">
+      <div className="wrapper maintext mb-8 w-full md:w-2/3">
         <div className="type">
           <h1 className="typing">Andrew Fennell&apos;s Portfolio</h1>
         </div>
@@ -20,7 +20,7 @@ const Home = () => {
           height={200}
           className="rounded-full mb-4 absolute -top-1/4"
         />
-        <h2 className="text-center text-dark-green text-4xl">
+        <h2 className="text-center text-dark-green text-4xl md:text-4xl lg:text-5xl">
           Welcome to my portfolio
         </h2>
         <br></br>
@@ -48,6 +48,7 @@ const Home = () => {
             title="LinkedIn"
             width={40}
             height={40}
+            className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
           />
         </a>
 
@@ -68,6 +69,7 @@ const Home = () => {
             title="GitHub"
             width={45}
             height={45}
+            className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
           />
         </a>
       </div>

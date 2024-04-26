@@ -9,7 +9,9 @@ const PROJECTS = [
     title: "Math Dragons!",
     slug: "math-dragons",
     description:
+      "Objective \n\n" +
       "As part of my 12 week MERN coding bootcamp, we were tasked with creating apps for our mid-course group project. My team decided to make a Choose Your Own Adventure text game, the story being a fight a dragon/save a maiden trope, but with the added twist of having to solve maths questions to advance.\n\n" +
+      "Objective \n\n" +
       "The criteria for our project was that the app had at least three pages (one of which being an 'About Us' page), and that there were CSS animations on the app. The app also had to accept some sort of user input, and with using local storage this input persists from one page to at least one other.\n\n" +
       "To meet this criteria, we decided the user should input their name in the first screen, and then that name would be used throughout the text of the game. We also used local storage to take the score from the Game page and present this on the Leaderboard page.\n\n" +
       "Where have you used CSS animations, I hear you ask? Hover over our heads on the About Us page, I think you will see we become quite animated . . . !\n\n" +
@@ -39,14 +41,14 @@ const PROJECTS = [
     category: "Personal",
   },
   {
-    title: "Tip Calculator",
-    slug: "tip-calculator",
-    description: "Tip Calculator description",
-    tagline: "How much should you tip??",
-    card_image: "/TipCalc.PNG",
-    main_image: "/TipCalc-Full.PNG",
-    site_URL: "https://codepen.io/fennand/pen/eYPGzKO",
-    category: "Personal",
+    title: "Fatigue Management International",
+    slug: "fmi",
+    description: "FMI description",
+    tagline: "Wellness and fitness services",
+    card_image: "/FMI-full.PNG",
+    main_image: "/FMI-full.PNG",
+    site_URL: "https://fmiapplications.com/",
+    category: "Client",
   },
   {
     title: "Portland Wine Cellars",
