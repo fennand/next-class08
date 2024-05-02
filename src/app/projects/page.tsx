@@ -5,7 +5,7 @@ export default function Page() {
   const projects = getProjects();
   return (
     <main className="flex min-h-screen items-center justify-center p-4 md:p-24">
-      <div className="flex flex-col items-center w-full md:w-2/3 lg:w-2/3 bg-white p-8 rounded-lg">
+      <div className="flex flex-col items-center w-full md:w-2/3 lg:w-2/3 bg-white p-8 rounded-lg border-2 border-dark-green">
         <h1 className="text-3xl font-bold mb-4 text-dark-green">Projects</h1>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

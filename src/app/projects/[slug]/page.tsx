@@ -30,17 +30,9 @@ export default function Page({ params }: projectProjectParams) {
   const nextProject =
     currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
-  const renderPreviousButton = previousProject && (
-    <Link href={`/projects/${previousProject.slug}`}>
-      <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer mr-4">
-        Previous Project
-      </div>
-    </Link>
-  );
-
   const renderNextButton = nextProject && (
     <Link href={`/projects/${nextProject.slug}`}>
-      <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer">
+      <div className="bg-dark-green text-white text-xl px-4 py-2 rounded-md cursor-pointer">
         Next Project
       </div>
     </Link>
@@ -50,7 +42,7 @@ export default function Page({ params }: projectProjectParams) {
     <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 text-white">
       <div className="w-full md:w-2/3 lg:w-2/3">
         <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg my-8 w-full mt-48">
+          <div className="bg-white p-8 rounded-lg my-8 w-full mt-2 border-2 border-dark-green">
             <h1 className="text-3xl font-bold mb-4 text-dark-green">
               {project.title}
             </h1>
@@ -85,9 +77,8 @@ export default function Page({ params }: projectProjectParams) {
           </div>
         </div>
         <div className="flex items-center justify-center my-8">
-          {renderPreviousButton}
           <Link href="/projects">
-            <div className="bg-white text-dark-green text-xl px-4 py-2 rounded-md cursor-pointer">
+            <div className="bg-dark-green text-white text-xl px-4 py-2 rounded-md cursor-pointer">
               Go Back to Projects
             </div>
           </Link>
