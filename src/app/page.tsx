@@ -14,13 +14,14 @@ const Home = () => {
         <div className="max-w-screen mx-auto">
           {" "}
           {/* Added div for responsive width */}
-          <Image
-            src="/profile-pic (1).png"
-            alt="Profile Picture"
-            width={200}
-            height={200}
-            className="rounded-full mb-8 mx-auto md:w-48 md:h-48"
-          />
+          <div className="flex justify-center mb-8 w-18 h-18 md:w-12 md:h-12 lg:w-72 lg:h-72 mx-auto">
+            <Image
+              src="/pfp3.png"
+              alt="Profile Picture"
+              width={400}
+              height={400}
+            />
+          </div>
           <p className="text-center text-dark-green text-xl">
             I have only recently started on a career in the tech industry (I was
             late to the party), after working in the Criminal Justice system for

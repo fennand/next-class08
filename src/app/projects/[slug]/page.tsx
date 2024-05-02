@@ -1,8 +1,9 @@
 import { getProjectsBySlug, getProjects } from "@/app/lib/projects";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import React from "react";
 
-type projectProjectParams = {
+type ProjectParams = {
   params: {
     slug: string;
   };
@@ -15,28 +16,22 @@ export function generateStaticParams() {
   });
 }
 
-export default function Page({ params }: projectProjectParams) {
+export default function ProjectPage({ params }: ProjectParams) {
   const projects = getProjects();
-  const currentIndex = projects.findIndex(
+  const projectIndex = projects.findIndex(
     (project) => project.slug === params.slug
   );
 
-  if (currentIndex === -1) {
+  if (projectIndex === -1) {
     notFound();
   }
 
-  const project = projects[currentIndex];
-  const previousProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
-  const nextProject =
-    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+  const project = projects[projectIndex];
+  const { skills } = project;
 
-  const renderNextButton = nextProject && (
-    <Link href={`/projects/${nextProject.slug}`}>
-      <div className="bg-dark-green text-white text-xl px-4 py-2 rounded-md cursor-pointer">
-        Next Project
-      </div>
-    </Link>
-  );
+  // Logic to determine the next project
+  const nextProject =
+    projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 text-white">
@@ -52,12 +47,53 @@ export default function Page({ params }: projectProjectParams) {
               alt={project.title}
               className="w-full h-100 object-cover mb-4 rounded-md"
             />
+            <div className="text-lg mb-4 text-dark-green">
+              <strong>Skills:</strong>{" "}
+              {skills &&
+                skills.split(",").map((skill, index) => {
+                  // Map each skill to its corresponding color
+                  const skillColorMap: { [key: string]: string } = {
+                    Javascript: "text-yellow-500 bg-yellow-100",
+                    Figma: "text-purple-500 bg-purple-100",
+                    HTML: "text-orange-500 bg-orange-100",
+                    CSS: "text-blue-500 bg-blue-100",
+                    APIs: "text-black-500 bg-gray-300",
+                    MongoDB: "text-green-500 bg-green-100",
+                    React: "text-cyan-500 bg-cyan-100",
+                    Express: "text-gray-300 bg-black",
+                    Eleventy: "text-gray-300 bg-black",
+                  };
+
+                  // Get the color for the current skill
+                  const colors = skillColorMap[skill.trim()];
+
+                  return (
+                    <span
+                      key={index}
+                      className={`inline-block px-2 py-1 rounded-md mr-2 mb-2 ${colors}`}
+                    >
+                      {skill.trim()}
+                    </span>
+                  );
+                })}
+            </div>
+
             <p className="text-lg mb-4 text-dark-green whitespace-pre-line">
-              {project.description}
+              {project.description.split("\n").map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  {paragraph.startsWith("Overview") ||
+                  paragraph.startsWith("Aims") ? (
+                    <strong>{paragraph}</strong>
+                  ) : (
+                    <>{paragraph}</>
+                  )}
+                  <br />
+                </React.Fragment>
+              ))}
             </p>
             {project.site_URL && (
               <p className="text-lg mb-4 text-dark-green">
-                Site:{" "}
+                <strong>Site:</strong>{" "}
                 <ExternalLink href={project.site_URL}>
                   {project.site_URL}
                 </ExternalLink>
@@ -65,26 +101,33 @@ export default function Page({ params }: projectProjectParams) {
             )}
             {project.repo_URL && (
               <p className="text-lg mb-4 text-dark-green">
-                Repo:{" "}
+                <strong>Repo:</strong>{" "}
                 <ExternalLink href={project.repo_URL}>
                   {project.repo_URL}
                 </ExternalLink>
               </p>
             )}
             <p className="text-lg text-dark-green">
-              Category: {project.category}
+              <strong>Category:</strong> {project.category}
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center my-8">
-          <Link href="/projects">
+      </div>
+      <div className="flex items-center justify-center my-8">
+        {/* Go Back to Projects button */}
+        <Link href="/projects">
+          <div className="bg-dark-green text-white text-xl px-4 py-2 rounded-md cursor-pointer mr-4">
+            Go Back to Projects
+          </div>
+        </Link>
+        {/* Next Project button */}
+        {nextProject && (
+          <Link href={`/projects/${nextProject.slug}`}>
             <div className="bg-dark-green text-white text-xl px-4 py-2 rounded-md cursor-pointer">
-              Go Back to Projects
+              Next Project
             </div>
           </Link>
-          {renderNextButton && <div className="ml-4"></div>}
-          {renderNextButton}
-        </div>
+        )}
       </div>
     </main>
   );
