@@ -23,11 +23,13 @@ const Home = () => {
             />
           </div>
           <p className="text-center text-dark-green text-xl">
-            I have only recently started on a career in the tech industry (I was
-            late to the party), after working in the Criminal Justice system for
-            most of my working life. I have now made the leap to become a
-            full-stack web developer, having undertaken an apprenticeship (Level
-            4 Web Development) and a coding bootcamp (with Tech Educators).
+            Over the past few years I started on a career in the tech industry
+            (I was late to the party), after working in the Criminal Justice
+            system for most of my working life. I have now made the leap to
+            become a full-stack web developer, having undertaken an
+            apprenticeship (Level 4 Web Development, including 18 month work
+            placement with an IT outsourcing company) and a coding bootcamp
+            (with Tech Educators).
           </p>
           <br />
           <p className="text-center text-dark-green text-xl">
